@@ -12,9 +12,9 @@ void createGroup() {
     // add to structure
     int promptInt = prompt_int_min("Please enter the number of members in the group: ", 1);
     // add to structure
-    prompt = prompt_string("Please enter the emergency contact details: ");
+    prompt = ;
     // add to structure
-    promptInt = prompt_int_min("Please enter the number of days this car will be rented out for: ", 1);
+    promptInt = ;
     // add to structure
 
     // return structure
