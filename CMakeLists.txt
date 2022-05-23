@@ -3,4 +3,4 @@ project(RentingForTheWeekend)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(RentingForTheWeekend main.cpp console.cpp console.h User.cpp User.h)
+add_executable(RentingForTheWeekend main.cpp console.cpp console.h createEditGroup.cpp createEditGroup.h User.cpp User.h)
