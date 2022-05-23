@@ -3,6 +3,8 @@
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
+    // TODO: Create user
+
+
     return 0;
 }
