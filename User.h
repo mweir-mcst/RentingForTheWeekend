@@ -8,10 +8,12 @@ using namespace std;
 class User {
 public:
     string address, emergencyContact, cardHolder;
-    int memberCount, rentalDays;
+    int memberCount, rentalDays, vehicle;
+    bool roadsideAssitance, gasFillCoverage, driverFaultCoverage;
 
-    User(const string&, const string&, int, const string&, int);
-    static User createUser();
+    User(string, string, int, string, int, string, bool, bool, bool);
 };
+
+User* createUser();
 
 #endif
