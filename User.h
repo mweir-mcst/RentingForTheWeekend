@@ -10,7 +10,7 @@ public:
     string address, emergencyContact, cardHolder;
     int memberCount, rentalDays;
 
-    User(string, string, int, string, int);
+    User(const string&, const string&, int, const string&, int);
     static User createUser();
 };
 
