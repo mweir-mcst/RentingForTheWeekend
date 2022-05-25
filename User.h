@@ -12,7 +12,6 @@ public:
     bool roadsideAssitance, gasFillCoverage, driverFaultCoverage;
 
     User(string, string, int, string, int, string, bool, bool, bool);
-
 };
 
 User* createUser();

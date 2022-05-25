@@ -3,7 +3,7 @@
 
 using namespace std;
 
-User::User(const string newCardHolder, const string newAddress, const int newMemberCount, const string newEmergencyContact, const int newRentalDays, const int newVehicle, const bool newRoadsideAssistance, const bool newGasFillCoverage, const bool newDriverFaultCoverage) {
+User::User(const string& newCardHolder, const string& newAddress, const int newMemberCount, const string& newEmergencyContact, const int newRentalDays, const int newVehicle, const bool newRoadsideAssistance, const bool newGasFillCoverage, const bool newDriverFaultCoverage) {
     address = newAddress;
     emergencyContact = newEmergencyContact;
     cardHolder = newCardHolder;
@@ -15,20 +15,13 @@ User::User(const string newCardHolder, const string newAddress, const int newMem
     driverFaultCoverage = newDriverFaultCoverage;
 }
 
-
 User* createUser() {
-    User* user = new User(
+    return new User(
             prompt_string("Please enter the name of the credit card holder: "),
             prompt_string("Please enter the address of the credit card holder: "),
             prompt_int_min("Please enter the number of members in your group: ", 1),
             prompt_string("Please enter the emergency contact details: "),
             prompt_int_min("Please enter the number of days this car will be rented out for: ", 1);
-    prompt_int_min_max("What kind of car would you like?\n1) Nissan Altima ($800)\n2) Ferrari ($5000)\n3) Subaru Forester ($1200)\nPlease enter your vehicle of choice by inputting the number next to your choice: ", 1, 3);
-
+            prompt_int_min_max("What kind of car would you like?\n1) Nissan Altima ($800)\n2) Ferrari ($5000)\n3) Subaru Forester ($1200)\nPlease enter your vehicle of choice by inputting the number next to your choice: ", 1, 3);
     );
-    return user;
-}
-
-
-
 }
