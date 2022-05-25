@@ -9,9 +9,9 @@ class User {
 public:
     string address, emergencyContact, cardHolder;
     int memberCount, rentalDays, vehicle;
-    bool roadsideAssitance, gasFillCoverage, driverFaultCoverage;
+    bool roadsideAssistance, gasFillCoverage, driverFaultCoverage;
 
-    User(string, string, int, string, int, string, bool, bool, bool);
+    User(const string&, const string&, int, const string&, int, int, bool, bool, bool);
 };
 
 User* createUser();

@@ -1,3 +1,6 @@
+#include <iostream>
+#include <string>
+
 #include "User.h"
 #include "console.h"
 
@@ -16,12 +19,32 @@ User::User(const string& newCardHolder, const string& newAddress, const int newM
 }
 
 User* createUser() {
+    string cardHolder = prompt_string("Please enter the name of the credit card holder: ");
+    string address = prompt_string("Please enter the address of the credit card holder: ");
+    int memberCount = prompt_int_min("Please enter the number of members in your group: ", 1);
+    string emergencyContact = prompt_string("Please enter the emergency contact details: ");
+    int rentalDays = prompt_int_min("Please enter the number of days this car will be rented out for: ", 1);
+
+    cout << "What kind of car would you like?" << endl
+        << "1) Nissan Altima ($800)" << endl
+        << "2) Ferrari ($5000)" << endl
+        << "3) Subaru Forester ($1200)" << endl;
+
+    int carChoice = prompt_int_min_max("Please enter your vehicle of choice by inputting the number next to your choice: ", 1, 3);
+
+    string roadsideAssistanceChoice = prompt_string_choices("Would you like roadside assistance? (y/n) ", {"Y", "y", "N", "n"});
+    string gasFillCoverage = prompt_string_choices("Would you like gas fill coverage? (y/n) ", {"Y", "y", "N", "n"});
+    string driverFaultCoverage = prompt_string_choices("Would you like driver fault coverage? (y/n) ", {"Y", "y", "N", "n"});
+
     return new User(
-            prompt_string("Please enter the name of the credit card holder: "),
-            prompt_string("Please enter the address of the credit card holder: "),
-            prompt_int_min("Please enter the number of members in your group: ", 1),
-            prompt_string("Please enter the emergency contact details: "),
-            prompt_int_min("Please enter the number of days this car will be rented out for: ", 1);
-            prompt_int_min_max("What kind of car would you like?\n1) Nissan Altima ($800)\n2) Ferrari ($5000)\n3) Subaru Forester ($1200)\nPlease enter your vehicle of choice by inputting the number next to your choice: ", 1, 3);
+            cardHolder,
+            address,
+            memberCount,
+            emergencyContact,
+            rentalDays,
+            carChoice,
+            roadsideAssistanceChoice == "Y" || roadsideAssistanceChoice == "y",
+            gasFillCoverage == "Y" || gasFillCoverage == "y",
+            driverFaultCoverage == "Y" || driverFaultCoverage == "y"
     );
 }
