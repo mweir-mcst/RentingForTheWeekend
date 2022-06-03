@@ -15,6 +15,7 @@ public:
     User() = default;
 
     void edit();
+    void displayBill();
 };
 
 User createUser();

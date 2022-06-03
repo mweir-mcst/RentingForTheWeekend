@@ -41,6 +41,15 @@ void User::edit() {
     driverFaultCoverage = driverFaultCoverageChoice == "Y" || driverFaultCoverageChoice == "y";
 }
 
+void User::displayBill() {
+    cout << "Card Holder: " << cardHolder << endl
+         << "Address: " << address << endl
+         << "Amount of group members: " << memberCount << ". Cost (20 * Member Count):  $" << memberCount * 20 << endl
+         << "Emergency Contact Details: " << emergencyContact << endl
+         << "Length of Rental in Days: " << rentalDays << ". Cost (75 * Rental Days): $" << rentalDays * 75 << endl
+         << "a";
+}
+
 User createUser() {
     User user;
     user.edit();
