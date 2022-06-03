@@ -99,3 +99,12 @@ User createUser() {
     user.edit();
     return user;
 }
+
+bool findUser(const string& cardHolder, vector<User>& users, User& user, int& index) {
+    for (int i = 0; i < users.size(); i++) if (users[i].cardHolder == cardHolder) {
+        user = users[i];
+        index = i;
+        return true;
+    }
+    return false;
+}
