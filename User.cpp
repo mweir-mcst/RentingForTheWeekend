@@ -48,3 +48,12 @@ User* createUser() {
             driverFaultCoverage == "Y" || driverFaultCoverage == "y"
     );
 }
+
+User* displayBill(User a) {
+    cout << "Card Holder: " << a.cardHolder << endl
+         << "Address: " << a.address << endl
+         << "Amount of group members: " << a.memberCount << ". Cost (20 * Member Count):  $" << a.memberCount * 20 << endl
+         << "Emergency Contact Details: " << a.emergencyContact << endl
+         << "Length of Rental in Days: " << a.rentalDays << ". Cost (75 * Rental Days): $" << a.rentalDays * 75 << endl
+         << "a";
+}

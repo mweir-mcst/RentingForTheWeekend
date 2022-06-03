@@ -12,8 +12,10 @@ public:
     bool roadsideAssistance, gasFillCoverage, driverFaultCoverage;
 
     User(const string&, const string&, int, const string&, int, int, bool, bool, bool);
+    void editUser(const string&, const string&, int, const string&, int, int, bool, bool, bool);
 };
 
 User* createUser();
+User* displayBill(User);
 
 #endif
