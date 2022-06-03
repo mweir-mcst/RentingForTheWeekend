@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    vector<User*> users = load_from_file();
+    vector<User> users = load_from_file();
 
     bool running = true;
     while (running) {
@@ -20,7 +20,7 @@ int main() {
 
         switch(prompt_int_min_max("Enter menu option: ", 1, 5)) {
             case 1:
-                // TODO: Add/remove/edit user
+                users.push_back(createUser());
                 break;
             case 2:
                 // TODO: Choose car

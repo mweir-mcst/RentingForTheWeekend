@@ -12,8 +12,11 @@ public:
     bool roadsideAssistance, gasFillCoverage, driverFaultCoverage;
 
     User(const string&, const string&, int, const string&, int, int, bool, bool, bool);
+    User() = default;
+
+    void edit();
 };
 
-User* createUser();
+User createUser();
 
 #endif
