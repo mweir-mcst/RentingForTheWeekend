@@ -26,7 +26,7 @@ bool customFind(vector<User*> vect, string key) {
 
 
 int main() {
-    vector<User*> users = load_from_file();
+    vector<User> users = load_from_file();
 
     bool running = true;
 
