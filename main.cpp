@@ -6,24 +6,6 @@
 
 using namespace std;
 
-// My function to find the user in the list.
-bool customFind(vector<User> vect, string key) {
-
-
-    // Loop through the vector, checking each value in each row and the first column.
-    for (int i = 0; i <= vect.size()-1; i++) {
-        //cout << "At row " << i << ", there is " << vect[i][0] << "\n\n";
-        // If key found, print as such,leave the function.
-        if (vect[i].cardHolder == key) {
-            cout << "User Found!\n";
-            return false;
-        }
-    }
-    // If key not found, print as such, and leave.
-    cout << "User not found.\n\n";
-    return true;
-}
-
 void manageUsers(vector<User>& users) {
     cout << "1) Add new user" << endl
         << "2) Edit user" << endl
@@ -59,20 +41,22 @@ void manageUsers(vector<User>& users) {
 
 
 int main() {
+
+    // Vector of users get's created from
     vector<User> users = load_from_file();
 
+    // Variables
     bool running = true;
-
     string strPrompt;
-
     int choice;
+    int location;
 
     while (running) {
         cout << "Welcome to the Alamo Car Renting Service! How may we help you today?" << endl
             << "1) Add, remove, or edit user(s)" << endl
             << "2) Display user's bill" << endl
             << "3) Exit program" << endl;
-
+      
         string cardHolder;
         User user;
         int index;

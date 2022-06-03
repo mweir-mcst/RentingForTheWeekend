@@ -18,7 +18,6 @@ public:
     void edit();
     void displayBill();
 };
-
 User createUser();
 bool findUser(const string&, vector<User>&, User&, int&);
 

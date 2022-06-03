@@ -42,12 +42,56 @@ void User::edit() {
 }
 
 void User::displayBill() {
+
+    // Total cost
+    int cost;
+
+    // Display basics
     cout << "Card Holder: " << cardHolder << endl
          << "Address: " << address << endl
          << "Amount of group members: " << memberCount << ". Cost (20 * Member Count):  $" << memberCount * 20 << endl
          << "Emergency Contact Details: " << emergencyContact << endl
          << "Length of Rental in Days: " << rentalDays << ". Cost (75 * Rental Days): $" << rentalDays * 75 << endl
-         << "a";
+         << "Current Vehicle: ";
+
+    // Add to cost
+    cost += memberCount * 20;
+    cost += rentalDays * 75;
+
+    // Prints price of selected vehicle
+    switch(vehicle) {
+        case 1:
+            cout << "Nissan Altima. Cost: $800" << endl;
+            cost += 800;
+            break;
+        case 2:
+            cout << "Ferrari. Cost: $5000" << endl;
+            cost += 5000;
+            break;
+        case 3:
+            cout << "Subaru Forester. Cost: $1200" << endl;
+            cost += 1200;
+            break;
+        default:
+            cout << "Something has gone wrong, and we cannot retrieve your vehicle of choice.";
+    }
+
+    // Various coverages
+    if (roadsideAssistance) {
+        cout << "Roadside Assistance: $150" << endl;
+        cost += 150;
+    }
+    if (gasFillCoverage) {
+        cout << "Gas Fill Coverage: $150" << endl;
+        cost += 150;
+    }
+    if (driverFaultCoverage) {
+        cout << "Driver Fault Coverage: $150" << endl;
+        cost += 150;
+    }
+
+    // Final Cost
+    cout << "Final Bill: $" << cost << endl;
 }
 
 User createUser() {
