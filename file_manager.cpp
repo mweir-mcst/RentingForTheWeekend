@@ -10,9 +10,11 @@ using namespace std;
 vector<User> load_from_file() {
     vector<User> users;
 
+    // If the file doesn't exist, return an empty vector
     ifstream fin("users.txt");
     if (!fin.good()) return users;
 
+    // Loop through each user in the file, adding the relevant properties to the user.
     int currentUser = 0;
     string currentValue;
     vector<string> currentUserInfo;
@@ -34,6 +36,7 @@ vector<User> load_from_file() {
 void save_to_file(vector<User>& users) {
     ofstream fout("users.txt");
 
+    // Loop through each user and save their properties to a file.
     for (const User& user : users) fout << user.cardHolder << endl
         << user.address << endl
         << user.memberCount << endl

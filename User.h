@@ -16,7 +16,7 @@ public:
     User() = default;
 
     void edit();
-    void displayBill();
+    void displayBill() const;
 };
 User createUser();
 bool findUser(const string&, vector<User>&, User&, int&);
