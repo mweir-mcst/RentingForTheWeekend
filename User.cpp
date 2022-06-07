@@ -20,6 +20,8 @@ User::User(const string& newCardHolder, const string& newAddress, const int newM
 }
 
 void User::edit() {
+
+    cout << "We will go through and replace info.\n";
     // Prompt the user for the basic info
     cardHolder = prompt_string("Please enter the name of the credit card holder: ");
     address = prompt_string("Please enter the address of the credit card holder: ");

@@ -47,7 +47,7 @@ void manageUsers(vector<User>& users) {
             }
             // Remove the index of the user
             users.erase(users.begin() + index);
-            cout << "Removed " << cardHolder << " from the system.";
+            cout << "Removed " << cardHolder << " from the system.\n";
             break;
     };
 }
@@ -94,6 +94,8 @@ int main() {
                 break;
         }
     }
+
+    cout << "\nHave a good day!";
 
     // Save users to file
     save_to_file(users);
